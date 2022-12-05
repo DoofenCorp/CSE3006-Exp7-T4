@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<title>Server Time Application</title>
+
+<body>
+
+    <h1 id="time" align="center"></h1>
+
+
+<!-- DON'T DELETE THE SCRIPTS -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+
+        socket.on('message', (msg) => {
+            document.getElementById("time").innerHTML = "";
+            document.getElementById("time").innerHTML = msg;
+        })
+
+    </script>
+<!-- DON'T DELETE ABOVE SCRIPTS -->
+
+
+</body>
+
+</html>
