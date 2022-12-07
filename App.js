@@ -7,13 +7,14 @@ const io = new Server(server);
 
 app.set("viewengine", "ejs");
 app.use(logger)
+app.use(express.static(__dirname + "/public"))
 
 io.on('connection', (socket) => {
   console.log('a user connected');
 
   setInterval(function() {
-    var date = Date()
-    socket.send(date)
+    // var date = Date()
+    socket.send(Date())
   }, 1000)
 
   socket.on('disconnect', () => {

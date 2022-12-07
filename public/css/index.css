@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo&family=Exo+2:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&display=swap');
+
+
+#team-brand{
+    font-family: 'Libre Baskerville', serif;
+    font-size: 2rem;
+}
+
+#app-brand{
+    font-family: 'Libre Baskerville', serif;
+    font-size: 2rem;
+    font-style: italic;
+}
+
+#Title {
+    font-family: 'Archivo', sans-serif;
+}
+
+#time, #date, #timezone {
+    font-family: 'Lora', serif;
+    font-style: italic;
+}
+
+@keyframes animatedBackground {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 90% 0;
+    }
+}
+
+html, body {
+    height: 100%
+}
+
+body {
+background-image: url(https://4kwallpapers.com/images/walls/thumbs_3t/3086.jpg);
+background-size: 120% 120%;
+background-position: center;
+background-repeat: repeat-x;
+height: 100%;
+animation: animatedBackground 10s linear infinite alternate;
+}
+
+#time-box{
+    color: white;
+    background-color: rgba(178, 164, 255, 0.04);
+	margin: auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+	text-align: center;
+	width: auto;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+	backdrop-filter: blur(6.9px);
+	-webkit-backdrop-filter: blur(6.9px);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+}
