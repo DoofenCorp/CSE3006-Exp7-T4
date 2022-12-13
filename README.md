@@ -1,4 +1,6 @@
-# CSE3006-Exp7
+# CSE3006 - Experiment 7 | [Open App](https://servertime.doofencorp.repl.co/)
+
+
 
 This is the experiment resource repository. Fork, clone and follow below.
 
@@ -19,4 +21,6 @@ This is the experiment resource repository. Fork, clone and follow below.
 
 ### Visit localhost:3000
 
-Deploying sooooon
+~~Deploying sooooon~~
+
+Hosted at: https://servertime.doofencorp.repl.co/
