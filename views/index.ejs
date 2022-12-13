@@ -6,7 +6,7 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css">
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/public/css/index.css">
     <link rel="icon" href="https://www.svgrepo.com/show/108315/clock.svg" type="image/x-icon">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -53,34 +53,11 @@
         var socket = io();
 
         socket.on('message', (msg) => {
-            document.getElementById("time").innerHTML = "";
-            var date = new Date(msg);
-            var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-            var h = date.getHours(); // 0 - 23
-            var m = date.getMinutes(); // 0 - 59
-            var s = date.getSeconds(); // 0 - 59
-            var day = days[date.getDay()];
-            var dd = date.getDate();
-            var mm = date.getMonth() + 1;
-            var yyyy = date.getFullYear();
-            var timezone = date.toString().match(/([A-Z]+[\+-][0-9]+.*)/)[1];
-            var session = "AM";
 
-            if (h == 0) {
-                h = 12;
-            }
-
-            if (h > 12) {
-                h = h - 12;
-                session = "PM";
-            }
-
-            h = (h < 10) ? "0" + h : h;
-            m = (m < 10) ? "0" + m : m;
-            s = (s < 10) ? "0" + s : s;
-
-            var time = h + ":" + m + ":" + s + " " + session;
-            var full_date = day + ', ' + dd + '/' + mm + '/' + yyyy;
+            var time_string = msg.split('@');
+            var time = time_string[0],
+            	full_date = time_string[1],
+                timezone = time_string[2];
 
             document.getElementById("time").innerHTML = "<i class='fa-regular fa-clock'></i> &nbsp;" + time;
             document.getElementById("date").innerHTML = "<i class='fa-solid fa-calendar-days'></i> &nbsp;" + full_date;
